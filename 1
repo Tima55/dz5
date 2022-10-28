@@ -1,0 +1,19 @@
+# Напишите программу, удаляющую из текста все слова, содержащие ""абв"".
+a = []
+with open(r'C:\Users\Tima\Desktop\dz\text.txt') as inf: # Строка для файла, файл должен содержать английские символы
+    for data in inf:
+        data = data.strip()
+        a.append(data.lower()) #все буквы станут маленькими .lower
+print('Введите элемент через Enter')
+e = input()
+
+b = []
+for i in a:
+    b.append(i.split())
+
+res = []
+for i in range(0, len(b)):
+    for j in range(0, len(b[i])):
+        if e not in b[i][j]:
+            res.append(b[i][j]) # проверка 15 строки на наличие символа
+print(res)
